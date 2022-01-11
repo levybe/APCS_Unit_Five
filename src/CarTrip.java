@@ -62,7 +62,7 @@ public class CarTrip {
         return getTripDistance() / myGallonsUsed;
     }
 
-    public double getTotalGasPrice (double pricePerGallon) {
-        return myGallonsUsed * pricePerGallon;
+    public String getTotalGasPrice (double pricePerGallon) {
+        return "Distance traveled: " + (myGallonsUsed * pricePerGallon) + " miles";
     }
 }
