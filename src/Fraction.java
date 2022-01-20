@@ -8,6 +8,7 @@ public class Fraction {
             this.numerator *= -1;
             this.denominator *= -1;
         }
+        reduceFraction();
     }
 
     public Fraction () {
@@ -36,6 +37,42 @@ public class Fraction {
     }
 
     public static Fraction add (Fraction x, Fraction y) {
+        int newNumerator = x.numerator * y.denominator + y.numerator * x.denominator;
+        int newDenominator = x.denominator * y.denominator;
 
+        return new Fraction (newNumerator, newDenominator);
+    }
+
+    public static Fraction subtract (Fraction x, Fraction y) {
+        int newNumerator = x.numerator * y.denominator - y.numerator * x.denominator;
+        int newDenominator = x.denominator * y.denominator;
+
+        return new Fraction (newNumerator, newDenominator);
+    }
+
+    public static Fraction multiply (Fraction x, Fraction y) {
+        int newNumerator = x.numerator * y. numerator;
+        int newDenominator = x.denominator * y.denominator;
+
+        return new Fraction (newNumerator, newDenominator);
+    }
+
+    public static Fraction divide (Fraction x, Fraction y) {
+        int newNumerator = x.numerator * y.denominator;
+        int newDenominator = x.denominator * y.numerator;
+
+        return new Fraction (newNumerator, newDenominator);
+    }
+
+    public int getNumerator () {
+        return numerator;
+    }
+
+    public int getDenominator () {
+        return denominator;
+    }
+
+    public String toString () {
+        return (numerator / denominator) + " " + (numerator % denominator)
     }
 }
