@@ -73,6 +73,14 @@ public class Fraction {
     }
 
     public String toString () {
-        return (numerator / denominator) + " " + (numerator % denominator)
+        if (numerator > denominator) {
+            if (numerator < 0) {
+                return (numerator / denominator) + " " + ((numerator * -1) % denominator) + "/" + denominator;
+            }
+            return (numerator / denominator) + " " + (numerator % denominator) + "/" + denominator;
+        }
+        else {
+           return numerator + "/" + denominator;
+        }
     }
 }
